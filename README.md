@@ -18,7 +18,7 @@ Change Email and Password in **WebApp/lib/email_modulle/email.js**
 #### Manage Keywords
 <img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Keywords.png" height="50%" width="50%">
 
-#### SendUpdates 
+#### Send Updates 
 <img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/SendUpdates.png" height="50%" width="50%">
 
 #### Manage Students
