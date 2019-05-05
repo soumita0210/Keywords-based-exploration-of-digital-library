@@ -6,7 +6,7 @@ const fs = require('fs');
 async function sendMail(toEmail, subject, body = "", html = "", pdfs = [], names = [], hasHTML = false) {
 
 	const senderEmail = 'ars.150697@gmail.com';
-	const senderPass = "Akash@15";
+	const senderPass = "*****";
 
 	var to_send = [];
 	var to_send_names = [];
