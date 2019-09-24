@@ -13,16 +13,16 @@ Change Email and Password in **WebApp/lib/email_modulle/email.js**
 ### Screenshots
 
 #### Dashboard
-<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Dashboard.png" height="50%" width="50%">
+<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Dashboard.png" height="50%" width="50%" style="border: 1px black solid">
 
 #### Manage Admins
-<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Admins.png" height="50%" width="50%">
+<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Admins.png" height="50%" width="50%" style="border: 1px black solid">
 
 #### Manage Keywords
-<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Keywords.png" height="50%" width="50%">
+<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Keywords.png" height="50%" width="50%" style="border: 1px black solid">
 
 #### Send Updates 
-<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/SendUpdates.png" height="50%" width="50%">
+<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/SendUpdates.png" height="50%" width="50%" style="border: 1px black solid">
 
 #### Manage Students
-<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Students.png" height="50%" width="50%">
+<img src="https://raw.githubusercontent.com/akashraj97/ResearchHunt/master/Students.png" height="50%" width="50%" style="border: 1px black solid">
