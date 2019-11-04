@@ -16,7 +16,11 @@ CREATE TABLE STUDENT(student_id varchar(12) primary key not null,
                         renewal_date date,
                         dob date,
                         gender varchar(6),
-                        is_subscribed boolean default false);
+                        is_subscribed boolean default false,
+                        phone varchar(15),
+                        guide_name varchar(30),
+                        research_faculty varchar(30),
+                        is_and boolean default false);
 
 ################################# Trigger
 DELIMITER $$

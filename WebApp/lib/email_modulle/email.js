@@ -1,12 +1,13 @@
 const nodemailer = require('nodemailer');
 const path = require('path');
 const fs = require('fs');
+const constants = require('../../constants');
 
 
 async function sendMail(toEmail, subject, body = "", html = "", pdfs = [], names = [], hasHTML = false) {
 
-	const senderEmail = 'ars.150697@gmail.com';
-	const senderPass = "*****";
+	const senderEmail = constants.email.id;
+	const senderPass = constants.email.password;
 
 	var to_send = [];
 	var to_send_names = [];
@@ -14,8 +15,8 @@ async function sendMail(toEmail, subject, body = "", html = "", pdfs = [], names
 	var data_names = [];
 	var totalSize = 0;
 	for (var i = 0; i < pdfs.length; i++) {
-		if(!pdfs[i].startsWith('/home'))
-			pdfs[i] = "/home/akash/SIH2019/webapp_final/lib/email_modulle/documents/" + pdfs[i].trim();
+		if(!pdfs[i].startsWith('/'))
+			pdfs[i] = constants.filePath.documentsDir + pdfs[i].trim();
 		const stats = fs.statSync(pdfs[i]);
 		const fileSizeInBytes = stats.size;
 		if (totalSize + fileSizeInBytes > 20 * 1024 * 1024) {

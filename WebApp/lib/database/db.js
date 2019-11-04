@@ -205,8 +205,10 @@ async function addStudent(name, email, mentorEmail, dob, phone,mentor_name,fac_n
 			constants.database.tables.student.columns.mentorEmail + ',' +
 			constants.database.tables.student.columns.registerDate + ',' +
 			constants.database.tables.student.columns.dob + ',' +
-			constants.database.tables.student.columns.gender +
-			",phone" +",guide_name,research_faculty" +') values (' +
+			constants.database.tables.student.columns.gender + ',' +
+			constants.database.tables.student.columns.phone + ',' + 
+			constants.database.tables.student.columns.guide_name + ',' +
+			constants.database.tables.student.columns.faculty_name +') values (' +
 			"'" + name + "'" + "," +
 			"'" + email + "'" + "," +
 			"'" + mentorEmail + "'" + "," +
@@ -220,6 +222,7 @@ async function addStudent(name, email, mentorEmail, dob, phone,mentor_name,fac_n
 
 		connection.query(query, function (err, result) {
 			if (err) {
+				console.log("Add User error " + err.sqlMessage)
 				resolve(false);
 			} else {
 				resolve(true);
@@ -579,13 +582,12 @@ async function sendUpdates(userId) {
 	const buisnessModel = require('../business_logic/logic.js');
 
 	let userData = await getStudentDetails(userId);
-
 	let emailId = userData[database.tables.student.columns.email];
 	let mentorsEmailId = userData[database.tables.student.columns.mentorEmail];
 	let and_or = userData.is_and;
 	const keyword_ids = await userKeywordAssignment(userId);
 	const keywords = await getKeywordNames(keyword_ids);
-	const model = new buisnessModel("/home/akash/SIH2019/webapp_final/lib/business_logic/python-module/logic.py");
+	const model = new buisnessModel(constants.filePath.pythonCode);
 	model.setInput(and_or,keywords);
 	console.log("Heyy");
 	let linksArray = await model.getRecommendation();
@@ -639,10 +641,6 @@ async function sendUpdates(userId) {
 	return true;
 }
 
-
-
-
-
 async function sendExactUpdates(userId) {
 
 	const buisnessModel = require('../business_logic/logic.js');
@@ -655,7 +653,7 @@ async function sendExactUpdates(userId) {
 	const keyword_ids = await userKeywordAssignment(userId);
 	const keywords = await getKeywordNames(keyword_ids);
 	console.log(keywords);
-	const model = new buisnessModel("/home/akash/SIH2019/webapp/lib/business_logic/python-module/logicexact.py");
+	const model = new buisnessModel(constants.filePath.pythonCode);
 	model.setInput(and_or,keywords);
 	let linksArray = await model.getRecommendation();
 	const email = require('../email_modulle/email');
@@ -860,6 +858,7 @@ async function subscribeUser(id, keywords) {
 
 		connection.query(query, function (err, result) {
 			if (err) {
+				console.error(err.sqlMessage);
 				reject(err.sqlMessage);
 			} else {
 				resolve(true);
@@ -921,6 +920,7 @@ async function updateAndOrUser(userId) {
 		var query = "UPDATE STUDENT SET is_and=not is_and where student_id like '" + userIdAsString + "'";
 		connection.query(query, function (err, result) {
 			if (err) {
+				console.log("And Or Update Error")
 				console.log(err.sqlMessage);
 				resolve(false);
 			} else {

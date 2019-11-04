@@ -21,7 +21,7 @@ try:
     user = "akash"
     passw = "Akash@15"
     host="localhost"
-    port = 3306
+    port = 33060
     database = "SIH"
     
     engine = create_engine('mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(user,passw,host,port,database), echo=False)
@@ -73,7 +73,7 @@ try:
         threshold=0.5
     else:
         threshold=0.7
-    query = "SELECT * from DOCUMENT";
+    query = "SELECT * from DOCUMENT"
     df1=pd.read_sql(sql= query,con=engine)
     
     (nrow,ncol)=df1.shape
@@ -143,4 +143,4 @@ try:
         else:
             break
 except Exception as e:
-    print(e);
+    print(e)

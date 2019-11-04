@@ -12,7 +12,11 @@ const studentTable = {
 		renewalDate: "renewal_date",
 		dob: "dob",
 		gender: "gender",
-		subscribed: "is_subscribed"
+		subscribed: "is_subscribed",
+		is_and: "is_and",
+		phone: "phone",
+		guide_name: "guide_name",
+		faculty_name: "research_faculty"
 	}
 };
 
@@ -35,6 +39,11 @@ const keywordTable = {
 		id: "keyword_id",
 		name: "keyword_name"
 	}
+};
+
+const emailDetails = {
+	id : "ars.150697@gmail.com",
+	password : "Akash@1997"
 };
 
 const keywordStudentRequest = {
@@ -62,12 +71,17 @@ const userStats = {
 	}
 };
 
+const filePath = {
+	pythonCode : "/Users/akashrs/ResearchHunt/WebApp/lib/business_logic/python-module/logic.py",
+	documentsDir : "/Users/akashrs/ResearchHunt/WebApp/documents/"
+};
+
 const databaseConstants = {
 	databaseName : "SIH",
 	userName: "akash",
 	hostIP: "localhost",
 	password: "Akash@15",
-	port: 3306,
+	port: 33060,
 	tables : {
 		student : studentTable,
 		admin : adminTable,
@@ -82,6 +96,8 @@ const databaseConstants = {
 
 module.exports = {
 	database : databaseConstants,
+	filePath: filePath,
 	secret: "ndskjvbekbasjkcbaks",
+	email: emailDetails, 
 	saltRounds : 10
 };

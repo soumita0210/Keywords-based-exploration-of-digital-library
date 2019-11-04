@@ -5,7 +5,7 @@ block header
 	link(rel="stylesheet", href="css/userDetails.css")
 	script(src="scripts/userDetails.js")
 block content
-	- function getExpiry(d,n){var x = new Date(d.setMonth(d.getMonth()+n));return x.toDateString();}
+	- function getExpiry(d,n){if(n==undefined){n=3;};var x = new Date(d.setMonth(d.getMonth()+n));return x.toDateString();}
 
 	ul#sidenav.sidenav.sidenav-fixed
 		img.responsive-img(src='images/brand_logo_min.jpg', alt='Brand Logo')
